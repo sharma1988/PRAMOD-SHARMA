@@ -1,0 +1,198 @@
+clc; clear all; close all;
+load Lidar;
+load Dhanushkodidata;
+v_value=0:0.1:22;
+
+vl20 = Lidaradata.WindSpeedmsat20m;
+dl20 = Lidaradata.WindDirectiondegat20m;
+
+vl80 = Lidaradata.WindSpeedmsat80m;
+dl80 = Lidaradata.WindDirectiondegat80m;
+
+vl100 = Lidaradata.WindSpeedmsat100m;
+dl100 = Lidaradata.WindDirectiondegat100m;
+
+vl120 = Lidaradata.WindSpeedmsat120m;
+dl120 = Lidaradata.WindDirectiondegat120m;
+
+vl150 = Lidaradata.WindSpeedmsat150m;
+dl150 = Lidaradata.WindDirectiondegat150m;
+
+vl180 = Lidaradata.WindSpeedmsat180m;
+dl180 = Lidaradata.WindDirectiondegat180m;
+
+vl200 = Lidaradata.WindSpeedmsat200m;
+dl200 = Lidaradata.WindDirectiondegat200m;
+
+vl220 = Lidaradata.WindSpeedmsat220m;
+dl220 = Lidaradata.WindDirectiondegat220m;
+
+
+% Mast Data at Dhanushkodi
+
+v20 = DHANUSHKODI.WS_20_mean;
+d20 = DHANUSHKODI.WD_20_mean;
+
+v80 = DHANUSHKODI.WS_80_mean;
+d80 = DHANUSHKODI.WD_80_mean;
+
+v100 = DHANUSHKODI.WS_100_mean;
+d100 = DHANUSHKODI.WD_98_mean;
+
+% pd = makedist('Weibull','a',2,'b',5);
+% v_value=0:0.1:20;
+% f_v=pdf(pd,v_value);
+% plot(v_value,f_v, 'LineWidth',2)
+
+% axes1 = subplot(1,2,1);
+% pd20=fitdist(v20,'Weibull')
+% fV20=pdf(pd20,v_value);
+% plot(v_value,fV20, 'LineWidth',2)
+% title(['Weibull Distribution at a height of 20 meter '])
+
+% % title(['Shape Factor (k) =  ',num2str(B),'Size Factor (c) = ',num2str(A)])
+% 
+% 
+% axes1 = subplot(1,2,1);
+% pd80=fitdist(v80,'Weibull')
+% fV80=pdf(pd80,v_value);
+% plot(v_value,fV80, 'LineWidth',2)
+% title(['Weibull Distribution at a height of 80 meter '])
+% 
+
+% pdm20 = makedist('Weibull','a',8.98777,'b',2.61508);
+% fmv=pdf(pdm20,v_value);
+% 
+% axes1 = subplot(1,2,1);
+% pdl_20=fitdist(vl20,'Weibull')
+% fVl_20=pdf(pdl_20,v_value);
+% plot(v_value,fV20,'b--',v_value,fmv,'r')
+% title(['Weibull Distribution at a height of 20 meter by MLM and MMLM method through Mast '])
+% xlabel('Velocity of wind in (m/s)')
+% ylabel('Probability Density Function')
+% % 
+% % title(['Shape Factor (k) =  ',num2str(B),'Size Factor (c) = ',num2str(A)])
+% 
+% 
+% axes7 = subplot(4,6,7);
+% pd80=fitdist(v80,'Weibull')
+% fV80=pdf(pd80,v_value);
+% plot(v_value,fV80, 'LineWidth',2)
+% title(['Weibull Distribution at a height of 80 meter '])
+% 
+% axes9 = subplot(4,6,9);
+% pd87=fitdist(v87,'Weibull')
+% fV87=pdf(pd87,v_value);
+% plot(v_value,fV87, 'LineWidth',2)
+% title(['Weibull Distribution at a height of 87 meter '])
+% 
+% % title(['Shape Factor (k) =  ',num2str(B),'Size Factor (c) = ',num2str(A)])
+% 
+% axes11 = subplot(4,6,11);
+% pd100=fitdist(v100,'Weibull')
+% fV100=pdf(pd100,v_value);
+% plot(v_value,fV100, 'LineWidth',2)
+% title(['Weibull Distribution at a height of 100 meter '])
+% 
+% axes13 = subplot(4,6,13);
+% pd107=fitdist(v107,'Weibull')
+% fV107=pdf(pd107,v_value);
+% plot(v_value,fV107, 'LineWidth',2)
+% title(['Weibull Distribution at a height of 107 meter '])
+% 
+% 
+% 
+% % title(['Shape Factor (k) =  ',num2str(B),'Size Factor (c) = ',num2str(A)])
+% 
+% axes15 = subplot(4,6,15);
+% pd120=fitdist(v120,'Weibull')
+% fV120=pdf(pd120,v_value);
+% plot(v_value,fV120, 'LineWidth',2)
+% title(['Weibull Distribution at a height of 120 meter '])
+% 
+% axes17 = subplot(4,6,17);
+% pd140=fitdist(v140,'Weibull')
+% fV140=pdf(pd140,v_value);
+% plot(v_value,fV140, 'LineWidth',2)
+% title(['Weibull Distribution at a height of 140 meter '])
+% 
+% axes19 = subplot(4,6,19);
+% pd160=fitdist(v160,'Weibull')
+% fV160=pdf(pd160,v_value);
+% plot(v_value,fV160, 'LineWidth',2)
+% title(['Weibull Distribution at a height of 160 meter '])
+% 
+% % title(['Shape Factor (k) =  ',num2str(B),'Size Factor (c) = ',num2str(A)])
+% 
+% 
+% axes21 = subplot(4,6,21);
+% pd180=fitdist(v180,'Weibull')
+% fV180=pdf(pd180,v_value);
+% plot(v_value,fV180, 'LineWidth',2)
+% title(['Weibull Distribution at a height of 180 meter '])
+% 
+% axes23 = subplot(4,6,23);
+% pd200=fitdist(v200,'Weibull')
+% fV200=pdf(pd200,v_value);
+% plot(v_value,fV200, 'LineWidth',2)
+% title(['Weibull Distribution at a height of 200 meter '])
+% 
+% % title(['Shape Factor (k) =  ',num2str(B),'Size Factor (c) = ',num2str(A)])
+% 
+
+
+
+axes1 = subplot(3,2,1);
+axes2 = subplot(3,2,2);
+axes3 = subplot(3,2,3);
+axes4 = subplot(3,2,4);
+axes5 = subplot(3,2,5);
+axes6 = subplot(3,2,6);
+
+% axes7 = subplot(4,6,14);
+% axes8 = subplot(4,6,16);
+% axes9 = subplot(4,6,18);
+% axes20 = subplot(4,6,20);
+% axes22 = subplot(4,6,22);
+% axes24 = subplot(4,6,24);
+
+set(gcf,'units','normalized','position',[0 0 1 1]);
+
+Options1 = {'anglenorth',0,'angleeast',90,'labels',{'N (0°)','S (180°)','E (90°)','W (270°)'},'freqlabelangle',45,'axes',axes1,'legendtype',1};
+[figure_handle,count1,speeds1,directions1,Table1] = WindRose(d20,v20,Options1);
+
+Options2 = {'anglenorth',0,'angleeast',90,'labels',{'N (0°)','S (180°)','E (90°)','W (270°)'},'freqlabelangle',45,'axes',axes2};
+[figure_handle,count2,speeds2,directions2,Table2] = WindRose(dl20,vl20,Options2);
+
+Options3 = {'anglenorth',0,'angleeast',90,'labels',{'N (0°)','S (180°)','E (90°)','W (270°)'},'freqlabelangle',45,'axes',axes3,'legendtype',1};
+[figure_handle,count3,speeds3,directions3,Table3] = WindRose(d80,v80,Options3);
+
+Options4 = {'anglenorth',0,'angleeast',90,'labels',{'N (0°)','S (180°)','E (90°)','W (270°)'},'freqlabelangle',45,'axes',axes4};
+[~,count4,speeds4,directions4,Table4] = WindRose(dl80,vl80,Options4);
+
+Options5 = {'anglenorth',0,'angleeast',90,'labels',{'N (0°)','S (180°)','E (90°)','W (270°)'},'freqlabelangle',45,'axes',axes5,'legendtype',1};
+[figure_handle,count5,speeds5,directions5,Table5] = WindRose(d100,v100,Options5);
+
+Options6 = {'anglenorth',0,'angleeast',90,'labels',{'N (0°)','S (180°)','E (90°)','W (270°)'},'freqlabelangle',45,'axes',axes6};
+[figure_handle,count6,speeds6,directions6,Table6] = WindRose(dl100,vl100,Options6);
+
+% Options7 = {'anglenorth',0,'angleeast',90,'labels',{'N (0°)','S (180°)','E (90°)','W (270°)'},'freqlabelangle',45,'axes',axes14,'legendtype',1};
+% [figure_handle,count7,speeds7,directions7,Table7] = WindRose(d107,v107,Options7);
+% 
+% Options8 = {'anglenorth',0,'angleeast',90,'labels',{'N (0°)','S (180°)','E (90°)','W (270°)'},'freqlabelangle',45,'axes',axes16};
+% [figure_handle,count8,speeds8,directions8,Table8] = WindRose(d120,v120,Options8);
+% 
+% Options9 = {'anglenorth',0,'angleeast',90,'labels',{'N (0°)','S (180°)','E (90°)','W (270°)'},'freqlabelangle',45,'axes',axes18,'legendtype',1};
+% [figure_handle,count9,speeds9,directions9,Table9] = WindRose(d140,v140,Options9);
+% 
+% Options10 = {'anglenorth',0,'angleeast',90,'labels',{'N (0°)','S (180°)','E (90°)','W (270°)'},'freqlabelangle',45,'axes',axes20};
+% [figure_handle,count10,speeds10,directions10,Table10] = WindRose(d160,v160,Options10);
+% 
+% Options11 = {'anglenorth',0,'angleeast',90,'labels',{'N (0°)','S (180°)','E (90°)','W (270°)'},'freqlabelangle',45,'axes',axes22,'legendtype',1};
+% [figure_handle,count11,speeds11,directions11,Table11] = WindRose(d180,v180,Options11);
+% 
+% Options12 = {'anglenorth',0,'angleeast',90,'labels',{'N (0°)','S (180°)','E (90°)','W (270°)'},'freqlabelangle',45,'axes',axes24};
+% [figure_handle,count12,speeds12,directions12,Table12] = WindRose(d200,v200,Options12);
+% 
+
+
