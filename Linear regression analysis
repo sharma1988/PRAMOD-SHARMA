@@ -1,0 +1,175 @@
+%% INITIATION OF PROGRAM
+% Load and store the data
+
+clc; clear all; close all;
+load Lidar;
+load Dhanushkodidata;
+v =0:1:25;
+z0 = 0.0002;
+d = 0:1:360;
+
+%% LIDAR DATA LOAD
+
+vl10 = Lidaradata.WindSpeedmsat10m;
+dl10 = Lidaradata.WindDirectiondegat10m;
+% sdl10 = Lidaradata.
+
+vlid10 = mean(vl10,'omitnan');
+
+vl20 = Lidaradata.WindSpeedmsat20m;
+dl20 = Lidaradata.WindDirectiondegat20m;
+
+vlid20 = mean(vl20,'omitnan');
+
+vl50 = Lidaradata.WindSpeedmsat50m;
+dl50 = Lidaradata.WindDirectiondegat50m;
+
+vlid50 = mean(vl50,'omitnan');
+
+vl80 = Lidaradata.WindSpeedmsat80m;
+dl80 = Lidaradata.WindDirectiondegat80m;
+
+vlid80 = mean(vl80,'omitnan');
+
+vl100 = Lidaradata.WindSpeedmsat100m;
+dl100 = Lidaradata.WindDirectiondegat100m;
+
+vlid100 = mean(vl100,'omitnan');
+
+vl120 = Lidaradata.WindSpeedmsat120m;
+dl120 = Lidaradata.WindDirectiondegat120m;
+
+vlid120 = mean(vl120,'omitnan');
+
+vl150 = Lidaradata.WindSpeedmsat150m;
+dl150 = Lidaradata.WindDirectiondegat150m;
+
+vlid150 = mean(vl150,'omitnan');
+
+vl180 = Lidaradata.WindSpeedmsat180m;
+dl180 = Lidaradata.WindDirectiondegat180m;
+
+vlid180 = mean(vl180,'omitnan');
+
+vl200 = Lidaradata.WindSpeedmsat200m;
+dl200 = Lidaradata.WindDirectiondegat200m;
+
+vlid200 = mean(vl200,'omitnan');
+
+vl220 = Lidaradata.WindSpeedmsat220m;
+dl220 = Lidaradata.WindDirectiondegat220m;
+
+vlid220 = mean(vl220,'omitnan');
+
+%% Mast Data at Dhanushkodi
+
+v10 = DHANUSHKODI.WS_10_mean;
+% d20 = DHANUSHKODI.WD_20_mean;
+
+vm10 = mean(v10,'omitnan');
+
+v20 = DHANUSHKODI.WS_20_mean;
+d20 = DHANUSHKODI.WD_20_mean;
+
+vm20 = mean(v20,'omitnan');
+
+v50 = DHANUSHKODI.WS_50_mean;
+% d50 = DHANUSHKODI.WD_50_mean;
+
+vm50 = mean(v50,'omitnan');
+
+v80 = DHANUSHKODI.WS_80_mean;
+d80 = DHANUSHKODI.WD_80_mean;
+
+vm80 = mean(v80,'omitnan');
+
+v100 = DHANUSHKODI.WS_100_mean;
+d100 = DHANUSHKODI.WD_98_mean;
+
+vm100 = mean(v100,'omitnan');
+
+
+%% Temperature data load
+
+% Tuplid = Lidaradata.UpperTempC;
+% Tdownlid = Lidaradata.LowerTempC;
+% 
+% Tmast = DHANUSHKODI.Ta_10_mean;
+% Tmast1 = Tmast(1:4393,1);
+% Tlid = (Tuplid+Tdownlid)/2;
+
+
+% del100 = dl100+ 5*rand(4393,1);
+
+%% Fitting Regression
+
+p=polyfit(vl100,vl80,2);
+
+vr20 = polyval (polyfit(vl50,vl20,1), v);
+dr20 = polyval (polyfit(dl50,dl20,1), d);
+
+vr80 = polyval (polyfit(vl80,vl50,1), v);
+dr80 = polyval (polyfit(dl80,dl50,1), d);
+
+vr100 = polyval (polyfit(vl100,vl80,1), v);
+dr100 = polyval (polyfit(dl100,dl80,1), d);
+
+y1 = 0.1392+0.9627*v;
+y2 = 0.02685+1.005*v;
+y3 = 0.02944+0.9896*v;
+
+y4 = 4.258+0.9244*d;
+y5 = 9.174+0.9258*d;
+y6 = 6.319+0.9562*d;
+
+
+subplot(2,3,1);
+plot(vl50,vl20,'r.',v,y1,'b-')
+axis([0 15 0 15]);
+% plot(vl50,vl20,'.',v,vr20),grid
+% title(['\fontsize{10}Comparison of Weibull Parameter through Mast at a height of 20 meter'])
+xlabel('Velocity through Mast at 20 meter height (m/s)','FontWeight','bold','FontSize',10)
+ylabel('Velocity through LiDAR at 20 meter height (m/s)','FontWeight','bold','FontWeight','bold','FontSize',10)
+
+% plot(vl80,vl50,'r.',v,vr80)
+
+subplot(2,3,2);
+plot(vl80,vl50,'r.',v,y2,'b-')
+axis([0 15 0 15]);
+xlabel('Velocity through Mast at 80 meter height (m/s)','FontWeight','bold','FontSize',10)
+ylabel('Velocity through LiDAR at 80 meter height (m/s)','FontWeight','bold','FontWeight','bold','FontSize',10)
+
+
+
+subplot(2,3,3);
+plot(vl100,vl80,'r.',v,y3,'b-')
+axis([0 15 0 15]);
+xlabel('Velocity through Mast at 100 meter height (m/s)','FontWeight','bold','FontSize',10)
+ylabel('Velocity through LiDAR at 100 meter height (m/s)','FontWeight','bold','FontWeight','bold','FontSize',10)
+
+
+
+subplot(2,3,4);
+plot(dl50,dl20,'b.',d,y4,'r-')
+axis([0 360 0 360]);
+xlabel('Direction through Mast at 20 meter height (Degree)','FontWeight','bold','FontSize',10)
+ylabel('Direction through LiDAR at 20 meter height (Degree)','FontWeight','bold','FontWeight','bold','FontSize',10)
+
+
+
+subplot(2,3,5);
+plot(dl80,dl50,'b.',d,y5,'r-')
+axis([0 360 0 360]);
+xlabel('Direction through Mast at 80 meter height (Degree)','FontWeight','bold','FontSize',10)
+ylabel('Direction through LiDAR at 80 meter height (Degree)','FontWeight','bold','FontWeight','bold','FontSize',10)
+
+
+
+subplot(2,3,6);
+plot(dl100,dl80,'b.',d,y6,'r-')
+axis([0 360 0 360]);
+xlabel('Direction through Mast at 100 meter height (Degree)','FontWeight','bold','FontSize',10)
+ylabel('Direction through LiDAR at 100 meter height (Degree)','FontWeight','bold','FontWeight','bold','FontSize',10)
+
+% polyfit(vl100,vl80,1)
+
