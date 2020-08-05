@@ -1,0 +1,305 @@
+clc; clear all; close all;
+load KC2080100;
+
+% km = Actualkc.k;
+% cm = Actualkc.c;
+% 
+% kl = Actualkc.k1;
+% cl = Actualkc.c1;
+
+v=0:0.1:25;
+
+
+pd1 = makedist('Weibull','a',9.29995,'b',3.3208);
+f1=pdf(pd1,v);
+
+pd2 = makedist('Weibull','a',10.42344,'b',2.53047987);
+f2=pdf(pd2,v);
+
+pd3 = makedist('Weibull','a',9.56909,'b',2.70879);
+f3=pdf(pd3,v);
+
+pd4 = makedist('Weibull','a',9.656676,'b',2.41098);
+f4=pdf(pd4,v);
+
+pd5 = makedist('Weibull','a',10.6499,'b',3.11655);
+f5=pdf(pd5,v);
+
+pd6 = makedist('Weibull','a',10.65082,'b',3.076858);
+f6=pdf(pd6,v);
+
+pd7 = makedist('Weibull','a',9.85452,'b',2.84893);
+f7=pdf(pd7,v);
+
+pd8 = makedist('Weibull','a',9.86119,'b',2.816147);
+f8=pdf(pd8,v);
+
+pd9 = makedist('Weibull','a',9.67343,'b',2.84893);
+f9=pdf(pd9,v);
+
+pd10 = makedist('Weibull','a',9.67998,'b',2.8161479);
+f10=pdf(pd10,v);
+
+
+subplot(3,2,1);
+plot(v,f1,'b',v,f2,'b--',v,f3,'r',v,f4,'r--',v,f5,'k',v,f6,'k--',v,f7,'y',v,f8,'c',v,f9,'g',v,f10,'g--','LineWidth',2)
+title(['\fontsize{11}Comparison of Weibull Parameter through Mast at a height of 50 meter'])
+xlabel('Velocity of wind (m/s)','FontWeight','bold','FontSize',10)
+ylabel('Probability Density Function','FontWeight','bold','FontWeight','bold','FontSize',10)
+legend(' Observed (MLM)',' Observed (MMLM)',' Power Law (MLM)',' Power Law (MMLM)',' alfa 1 (MLM)',' alfa 1 (MMLM)',' alfa 2 (MLM)',' alfa 2 (MMLM)','Log Law (MLM)','Log Law (MMLM)','FontWeight','bold')
+
+
+pd11 = makedist('Weibull','a',6.36978,'b',3.7664);
+f11=pdf(pd11,v);
+
+pd12 = makedist('Weibull','a',8.2943,'b',2.80609);
+f12=pdf(pd12,v);
+
+pd13 = makedist('Weibull','a',6.62046,'b',2.58537);
+f13=pdf(pd13,v);
+
+pd14 = makedist('Weibull','a',6.630736,'b',2.546677);
+f14=pdf(pd14,v);
+
+pd15 = makedist('Weibull','a',7.70031,'b',3.11595);
+f15=pdf(pd15,v);
+
+pd16 = makedist('Weibull','a',7.68774,'b',3.091685);
+f16=pdf(pd16,v);
+
+pd17 = makedist('Weibull','a',6.9114,'b',2.84838);
+f17=pdf(pd17,v);
+
+pd18 = makedist('Weibull','a',6.91324,'b',2.8138);
+f18=pdf(pd18,v);
+
+pd19 = makedist('Weibull','a',6.78439,'b',2.84838);
+f19=pdf(pd19,v);
+
+pd20 = makedist('Weibull','a',6.7862,'b',2.8138);
+f20=pdf(pd20,v);
+
+
+subplot(3,2,2);
+plot(v,f11,'b',v,f12,'b--',v,f13,'r',v,f14,'r--',v,f15,'k',v,f16,'k--',v,f17,'y',v,f18,'c',v,f19,'g',v,f20,'g--','LineWidth',2)
+title(['\fontsize{11}Comparison of Weibull Parameter through LiDAR at a height of 50 meter'])
+xlabel('Velocity of wind (m/s)','FontWeight','bold','FontSize',10)
+ylabel('Probability Density Function','FontWeight','bold','FontWeight','bold','FontSize',10)
+legend(' Observed (MLM)',' Observed (MMLM)',' Power Law (MLM)',' Power Law (MMLM)',' alfa 1 (MLM)',' alfa 1 (MMLM)',' alfa 2 (MLM)',' alfa 2 (MMLM)','Log Law (MLM)','Log Law (MMLM)','FontWeight','bold')
+
+
+
+pd31 = makedist('Weibull','a',9.39582,'b',3.1322);
+f31=pdf(pd31,v);
+
+pd32 = makedist('Weibull','a',11.9938,'b',2.477);
+f32=pdf(pd32,v);
+
+pd33 = makedist('Weibull','a',9.48293,'b',2.6727);
+f33=pdf(pd33,v);
+
+pd34 = makedist('Weibull','a',9.4886668,'b',2.614798);
+f34=pdf(pd4,v);
+
+pd35 = makedist('Weibull','a',10.2282,'b',2.87237);
+f35=pdf(pd35,v);
+
+pd36 = makedist('Weibull','a',10.236724,'b',2.848106);
+f36=pdf(pd36,v);
+
+pd37 = makedist('Weibull','a',9.76498,'b',2.73396);
+f37=pdf(pd37,v);
+
+pd38 = makedist('Weibull','a',9.773692,'b',2.70954258);
+f38=pdf(pd38,v);
+
+pd39 = makedist('Weibull','a',9.65162,'b',2.73396);
+f39=pdf(pd39,v);
+
+pd40 = makedist('Weibull','a',9.664065,'b',2.7106345);
+f40=pdf(pd40,v);
+
+
+subplot(3,2,3);
+plot(v,f31,'b',v,f32,'b--',v,f33,'r',v,f34,'r--',v,f35,'k',v,f36,'k--',v,f37,'y',v,f38,'c',v,f39,'g',v,f40,'g--','LineWidth',2)
+title(['\fontsize{11}Comparison of Weibull Parameter through Mast at a height of 80 meter'])
+xlabel('Velocity of wind (m/s)','FontWeight','bold','FontSize',10)
+ylabel('Probability Density Function','FontWeight','bold','FontWeight','bold','FontSize',10)
+legend(' Observed (MLM)',' Observed (MMLM)',' Power Law (MLM)',' Power Law (MMLM)',' alfa 1 (MLM)',' alfa 1 (MMLM)',' alfa 2 (MLM)',' alfa 2 (MMLM)','Log Law (MLM)','Log Law (MMLM)','FontWeight','bold')
+
+
+
+pd31 = makedist('Weibull','a',6.42707,'b',3.6114);
+f31=pdf(pd31,v);
+
+pd32 = makedist('Weibull','a',8.0829,'b',2.78499);
+f32=pdf(pd32,v);
+
+pd33 = makedist('Weibull','a',6.42574,'b',2.76522);
+f33=pdf(pd33,v);
+
+pd34 = makedist('Weibull','a',6.4218,'b',2.72999);
+f34=pdf(pd34,v);
+
+pd35 = makedist('Weibull','a',7.13372,'b',2.94815);
+f35=pdf(pd35,v);
+
+pd36 = makedist('Weibull','a',7.137615,'b',2.92268);
+f36=pdf(pd36,v);
+
+pd37 = makedist('Weibull','a',6.68752,'b',2.80609);
+f37=pdf(pd37,v);
+
+pd38 = makedist('Weibull','a',6.688298,'b',2.77848);
+f38=pdf(pd38,v);
+
+pd39 = makedist('Weibull','a',6.60989,'b',2.80609);
+f39=pdf(pd39,v);
+
+pd40 = makedist('Weibull','a',6.61065,'b',2.77848);
+f40=pdf(pd40,v);
+
+
+subplot(3,2,4);
+plot(v,f31,'b',v,f32,'b--',v,f33,'r',v,f34,'r--',v,f35,'k',v,f36,'k--',v,f37,'y',v,f38,'c',v,f39,'g',v,f40,'g--','LineWidth',2)
+title(['\fontsize{11}Comparison of Weibull Parameter through LiDAR at a height of 80 meter'])
+xlabel('Velocity of wind (m/s)','FontWeight','bold','FontSize',10)
+ylabel('Probability Density Function','FontWeight','bold','FontWeight','bold','FontSize',10)
+legend(' Observed (MLM)',' Observed (MMLM)',' Power Law (MLM)',' Power Law (MMLM)',' alfa 1 (MLM)',' alfa 1 (MMLM)',' alfa 2 (MLM)',' alfa 2 (MMLM)','Log Law (MLM)','Log Law (MMLM)','FontWeight','bold')
+
+
+
+pd41 = makedist('Weibull','a',9.50019,'b',3.2491);
+f41=pdf(pd41,v);
+
+pd42 = makedist('Weibull','a',11.7506,'b',2.67515);
+f42=pdf(pd42,v);
+
+pd43 = makedist('Weibull','a',9.4696,'b',2.64576);
+f43=pdf(pd43,v);
+
+pd44 = makedist('Weibull','a',9.4775,'b',2.62005);
+f44=pdf(pd44,v);
+
+pd45 = makedist('Weibull','a',9.85004,'b',2.739);
+f45=pdf(pd45,v);
+
+pd46 = makedist('Weibull','a',9.857685,'b',2.71471978);
+f46=pdf(pd46,v);
+
+pd47 = makedist('Weibull','a',9.61602,'b',2.67316);
+f47=pdf(pd47,v);
+
+pd48 = makedist('Weibull','a',9.621858,'b',2.64647);
+f48=pdf(pd48,v);
+
+pd49 = makedist('Weibull','a',9.6314,'b',2.67316);
+f49=pdf(pd49,v);
+
+pd50 = makedist('Weibull','a',9.5662376,'b',2.6458);
+f50=pdf(pd50,v);
+
+
+subplot(3,2,5);
+plot(v,f41,'b',v,f42,'b--',v,f43,'r',v,f44,'r--',v,f45,'k',v,f46,'k--',v,f47,'y',v,f48,'c',v,f49,'g',v,f50,'g--','LineWidth',2)
+title(['\fontsize{11}Comparison of Weibull Parameter through Mast at a height of 100 meter'])
+xlabel('Velocity of wind (m/s)','FontWeight','bold','FontSize',10)
+ylabel('Probability Density Function','FontWeight','bold','FontWeight','bold','FontSize',10)
+legend(' Observed (MLM)',' Observed (MMLM)',' Power Law (MLM)',' Power Law (MMLM)',' alfa 1 (MLM)',' alfa 1 (MMLM)',' alfa 2 (MLM)',' alfa 2 (MMLM)','Log Law (MLM)','Log Law (MMLM)','FontWeight','bold')
+
+pd51 = makedist('Weibull','a',6.46118,'b',3.4691);
+f51=pdf(pd51,v);
+
+pd51 = makedist('Weibull','a',6.46118,'b',3.4691);
+f51=pdf(pd51,v);
+
+pd52 = makedist('Weibull','a',7.8389,'b',2.7903);
+f52=pdf(pd52,v);
+
+pd53 = makedist('Weibull','a',6.60989,'b',2.80609);
+f53=pdf(pd53,v);
+
+pd54 = makedist('Weibull','a',6.46855,'b',2.776239);
+f54=pdf(pd54,v);
+
+pd55 = makedist('Weibull','a',6.79956,'b',2.87552);
+f55=pdf(pd55,v);
+
+pd56 = makedist('Weibull','a',6.80354,'b',2.8593);
+f56=pdf(pd56,v);
+
+pd57 = makedist('Weibull','a',6.5777,'b',2.80641);
+f57=pdf(pd57,v);
+
+pd58 = makedist('Weibull','a',6.58514,'b',2.7834);
+f58=pdf(pd58,v);
+
+pd59 = makedist('Weibull','a',6.53826,'b',2.80641);
+f59=pdf(pd59,v);
+
+pd60 = makedist('Weibull','a',6.5459,'b',2.785589);
+f60=pdf(pd60,v);
+
+
+
+subplot(3,2,6);
+plot(v,f51,'b',v,f52,'b--',v,f53,'r',v,f54,'r--',v,f55,'k',v,f56,'k--',v,f57,'y',v,f58,'c',v,f59,'g',v,f60,'g--','LineWidth',2)
+title(['\fontsize{11}Comparison of Weibull Parameter through LiDAR at a height of 100 meter'])
+xlabel('Velocity of wind (m/s)','FontWeight','bold','FontSize',10)
+ylabel('Probability Density Function','FontWeight','bold','FontWeight','bold','FontSize',10)
+legend(' Observed (MLM)',' Observed (MMLM)',' Power Law (MLM)',' Power Law (MMLM)',' alfa 1 (MLM)',' alfa 1 (MMLM)',' alfa 2 (MLM)',' alfa 2 (MMLM)','Log Law (MLM)','Log Law (MMLM)','FontWeight','bold')
+
+% 
+% pd10 = makedist('Weibull','a',9.664065,'b',2.7106345);
+% f10=pdf(pd6,v);
+
+% pd11 = makedist('Weibull','a',9.76498,'b',2.73396);
+% f7=pdf(pd7,v);
+% 
+% pd12 = makedist('Weibull','a',9.773692,'b',2.70954258);
+% f8=pdf(pd8,v);
+
+
+% plot(v,f1,'b',v,f2,'r','LineWidth',2)
+% plot(v,f3,'g',v,f4,'c','LineWidth',2)
+% plot(v,f1,'b',v,f2,'b--',v,f3,'r',v,f4,'r--',v,f5,'k',v,f6,'k--',v,f7,'y',v,f8,'c',v,f9,'g',v,f10,'g--','LineWidth',2)
+% % plot(v,f1,'b',v,f2,'r',v,f3,'g',v,f4,'c','LineWidth',2)
+% % title(['\fontsize{17}Weibull Distribution at a height of 20 meter by MLM and MMLM method through LiDAR '])
+% title(['\fontsize{17}Comparison of Weibull Parameter through LiDAR at a height of 100 meter'])
+% % title(['\fontsize{17}Comparison of Weibull Parameter through power law and log law by MLM and MMLM method at a height of 120 meter'])
+% % title(['\fontsize{17}Comparison of Weibull Parameter between LiDAR and Mast Data by MLM and MMLM method at a height of 20 meter'])
+% xlabel('Velocity of wind (m/s)','FontWeight','bold','FontSize',15)
+% ylabel('Probability Density Function','FontWeight','bold','FontWeight','bold','FontSize',15)
+% % legend('MLM','MMLM','FontWeight','bold')
+% legend(' Observed (MLM)',' Observed (MMLM)',' Power Law (MLM)',' Power Law (MMLM)',' alfa 1 (MLM)',' alfa 1 (MMLM)',' alfa 2 (MLM)',' alfa 2 (MMLM)','Log Law (MLM)','Log Law (MMLM)','FontWeight','bold')
+% % legend(' Power Law 1 (MLM)',' Power Law 2 (MLM)',' Power Law 3 (MLM)','Log Law (MLM)',' Power Law 1 (MMLM)',' Power Law 2 (MMLM)',' Power Law 3 (MMLM)','Log Law (MMLM)','FontWeight','bold')
+% % legend('LiDAR (MLM)','LiDAR (MMLM)','Mast (MLM)','Mast (MMLM)','FontWeight','bold')
+
+
+% ax1=[0 2.5 5 7.5 10 12.5 15 17.5 20 22.5 25]
+% ax2=[0 0.25]
+% axis([ax1 ax2])
+
+%% 
+
+% axes1 = subplot(1,2,1);
+% pdm_100=fitdist(v100,'Weibull')
+% fVm_100=pdf(pdm_100,v);
+% plot(v,fV100,'b--',v,fmv,'r')
+% title(['Weibull Distribution at a height of 100 meter by MLM and MMLM method through Mast '])
+% xlabel('Velocity of wind in (m/s)')
+% ylabel('Probability Density Function')
+
+%% LIDAR DATA
+
+
+% pdlmmlm100 = makedist('Weibull','a',6.46493,'b',2.7903);
+% flvmmlm100v=pdf(pdlmmlm100,v);
+% 
+% % axes1 = subplot(1,2,1);
+% pdl_100=fitdist(vl100,'Weibull')
+% fVl_100=pdf(pdl_100,v);
+% plot(v,f1,'b--',v,f2,'r',v,f3,'m',v,f4,'k:','LineWidth',2)
+% title(['Comparison of Weibull Parameter between LiDAR and Mast Data by MLM and MMLM method at a height of 100 meter'])
+% xlabel('Velocity of wind (m/s)')
+% ylabel('Probability Density Function')
